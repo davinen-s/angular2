@@ -10,9 +10,17 @@
   width: 150px;
 }
 
-.media-item div {
-  width: 100%;
+ :host.medium-movies h3{
+  color: green !important;
+
 }
+
+
+ :host.medium-series h3{
+  color: cornflowerblue;
+}
+
+
 
 .name {
   align-self: flex-start;

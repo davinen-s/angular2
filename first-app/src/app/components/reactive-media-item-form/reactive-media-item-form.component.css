@@ -1,0 +1,11 @@
+:host label {
+  color: cornflowerblue;
+}
+
+
+:host ul{
+  list-style: none;
+  list-style-position: initial;
+  padding: 0;
+  margin: 0;
+}
