@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+
+<p class="description">
+  Keeping track of media i want to watch.
+</p>
+
+<app-media-item
+[mediaItem] = "firstMediaItem"
+(delete)="onMediaItemDelete($event)"></app-media-item>
