@@ -12,3 +12,11 @@ h1 {
   font-style: italic;
   color: lightseagreen;
 }
+
+input.ng-invalid {
+  border: 2px solid darkred ;
+}
+
+.error {
+  color: red;
+}

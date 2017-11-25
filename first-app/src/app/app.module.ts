@@ -1,3 +1,5 @@
+import { lookupListToken, lookupLists } from './providers';
+import { MediaItemService } from './components/media-item/media-item-service';
 import { CategorylistPipe } from './category-list.pipe';
 import { FavoriteDirective } from './favorite.directive';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +29,10 @@ import { ReactiveMediaItemFormComponent } from './components/reactive-media-item
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MediaItemService,
+  { provide: lookupListToken, useValue: lookupLists}
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
