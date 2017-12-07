@@ -1,3 +1,4 @@
+import { MockXHRBackend } from './components/mocked-backend/mock-xhr-backend';
 import { lookupListToken, lookupLists } from './providers';
 import { MediaItemService } from './components/media-item/media-item-service';
 import { CategorylistPipe } from './category-list.pipe';
@@ -30,7 +31,8 @@ import { ReactiveMediaItemFormComponent } from './components/reactive-media-item
     HttpModule
   ],
   providers: [MediaItemService,
-  { provide: lookupListToken, useValue: lookupLists}
+  { provide: lookupListToken, useValue: lookupLists},
+  { provide : MockXHRBackend, useClass: MockXHRBackend}
   ],
   bootstrap: [AppComponent]
 
