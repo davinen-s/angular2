@@ -8,16 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaItemListComponent {
 
-  mediaItems;
+  medium = '';
+  mediaItems = [];
 
   constructor ( private mediaItemService: MediaItemService) {}
 
   ngOnInit() {
-    this.mediaItems = this.mediaItemService.get();
+    // this.mediaItemService.get().subscribe(mediaItems => {
+    //   this.mediaItems = mediaItems;
+    // }) ;
+    this.getMediaItems(this.medium);
   }
 
   onMediaItemDelete(mediaItem){
-    this.mediaItems = this.mediaItemService.delete(mediaItem);
+    this.mediaItemService.delete(mediaItem);
+  }
+
+  getMediaItems(medium) {
+    this.medium = medium;
+    this.mediaItemService.get(medium).subscribe(mediaItems => {
+      this.mediaItems = mediaItems;
+    }) ;
   }
 
 }

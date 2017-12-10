@@ -5,7 +5,8 @@ import { FavoriteDirective } from './favorite.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, XHRBackend } from '@angular/http';
+import { MockXHRBackend } from './components/mocked-backend/mock-xhr-backend';
 
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './components/media-item/media-item.component';
@@ -30,7 +31,8 @@ import { ReactiveMediaItemFormComponent } from './components/reactive-media-item
     HttpModule
   ],
   providers: [MediaItemService,
-  { provide: lookupListToken, useValue: lookupLists}
+  { provide: lookupListToken, useValue: lookupLists},
+  { provide : XHRBackend, useClass: MockXHRBackend}
   ],
   bootstrap: [AppComponent]
 
